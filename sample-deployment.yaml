@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: sample-app
+  name: sample-app
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app
+    spec:
+      containers:
+      - image: harbor.management.pks.erds.io/test-java-app-from-builder/sample:latest
+        name: sample
+        ports:
+        - containerPort: 8080
