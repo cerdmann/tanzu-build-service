@@ -18,6 +18,7 @@ spec:
     spec:
       containers:
       - image: harbor.management.pks.erds.io/test-java-app-from-builder/sample:latest
+        imagePullPolicy: Always
         name: sample
         ports:
         - containerPort: 8080
